@@ -13,6 +13,9 @@ public interface QuestionDao {
     @Query("SELECT * from questions_table")
      LiveData<List<Questions>> getAllQuestions();
 
+    @Query("SELECT * from questions_table WHERE questions_table.category = :category")
+    LiveData<List<Questions>> getQuestionsByCategory(String category);
+
     @Insert
     void insert(Questions questions);
 

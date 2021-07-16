@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="300dp"
     android:layout_gravity="center"
-    android:background="#CD5A5A"
+    android:background="@drawable/dialogs_background"
     android:layout_height="250dp">
 
 
@@ -46,6 +46,6 @@
         android:textStyle="bold"
         android:textColor="#fff"
         android:textSize="30sp"
-        android:background="#FF9800"
+        android:background="@drawable/dialog_bt_bg"
         />
 </LinearLayout>

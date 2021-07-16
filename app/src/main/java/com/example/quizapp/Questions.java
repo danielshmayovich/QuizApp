@@ -31,23 +31,29 @@ public class Questions {
     @ColumnInfo(name = "answer")
     private int answer;
 
-    public Questions( String question, String optA, String optB, String optC, String optD, int answer) {
+    @ColumnInfo(name = "category")
+    private String category;
+
+    public Questions( String question, String optA, String optB, String optC, String optD, int answer,String category) {
         this.question = question;
         this.optA = optA;
         this.optB = optB;
         this.optC = optC;
         this.optD = optD;
         this.answer = answer;
+        this.category = category;
+
     }
 
     Questions() {
-        this.id = id;
+      //  this.id = id;
         this.question = question;
         this.optA = optA;
         this.optB = optB;
         this.optC = optC;
-        this.optD = optD;
-        this.answer = answer;
+        this.optD = "";
+      //  this.answer = answer;
+        this.category = "";
     }
 
 
@@ -105,5 +111,13 @@ public class Questions {
 
     public void setAnswer(int answer) {
         this.answer = answer;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String  category) {
+        this.category = category;
     }
 }

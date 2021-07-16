@@ -6,24 +6,24 @@
     android:background="@drawable/dialogs_background"
     android:layout_height="250dp">
 
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wrong"
+        android:text="Times Up!"
         android:padding="5dp"
-        android:layout_marginTop="10dp"
         android:textStyle="bold"
+        android:layout_marginTop="10dp"
         android:textColor="#FFFFFF"
         android:layout_gravity="center"
         android:textSize="30sp"
         />
+
     <TextView
-        android:id="@+id/textView_Correct_Answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Final Score: "
-        android:singleLine="true"
-        android:ellipsize="end"
+        android:text="Game Over "
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
         android:paddingBottom="10dp"
@@ -38,7 +38,7 @@
 
 
     <Button
-        android:id="@+id/bt_wrongDialog"
+        android:id="@+id/bt_timerDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
