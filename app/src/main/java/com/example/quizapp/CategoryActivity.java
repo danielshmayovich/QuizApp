@@ -8,17 +8,17 @@ import android.widget.Button;
 import android.widget.Switch;
 
 public class CategoryActivity extends AppCompatActivity  implements View.OnClickListener {
-    Button btcomputers,btjava;
+    Button btComputers,btHistory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        btcomputers = findViewById(R.id.bt_computers);
-        btjava = findViewById(R.id.bt_java);
+        btComputers = findViewById(R.id.bt_Computers);
+        btHistory = findViewById(R.id.bt_History);
 
-        btcomputers.setOnClickListener(this);
-        btjava.setOnClickListener(this);
+        btComputers.setOnClickListener(this);
+        btHistory.setOnClickListener(this);
 
     }
 
@@ -27,17 +27,17 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
 
         switch (view.getId()){
 
-            case R.id.bt_computers:
+            case R.id.bt_Computers:
 
                 Intent intentComputers = new Intent(CategoryActivity.this,QuizActivity.class);
-                intentComputers.putExtra("Category","computers");
+                intentComputers.putExtra("Category","Computers");
                 startActivity(intentComputers);
                 break;
 
-            case R.id.bt_java:
-                Intent intentJAVA = new Intent(CategoryActivity.this,QuizActivity.class);
-                intentJAVA.putExtra("Category","JAVA");
-                startActivity(intentJAVA);
+            case R.id.bt_History:
+                Intent intentHistory = new Intent(CategoryActivity.this,QuizActivity.class);
+                intentHistory.putExtra("Category","History");
+                startActivity(intentHistory);
                 break;
 
 

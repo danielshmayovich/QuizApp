@@ -46,14 +46,14 @@ public class Questions {
     }
 
     Questions() {
-      //  this.id = id;
+       // this.id = id;
         this.question = question;
         this.optA = optA;
         this.optB = optB;
         this.optC = optC;
         this.optD = "";
       //  this.answer = answer;
-        this.category = "";
+       this.category = "";
     }
 
 

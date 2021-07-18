@@ -41,7 +41,7 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(ResultActivity.this,PlayActivicy.class);
+                Intent intent = new Intent(ResultActivity.this, PlayActivity.class);
                 startActivity(intent);
 
             }

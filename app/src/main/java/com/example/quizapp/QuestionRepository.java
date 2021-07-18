@@ -23,7 +23,9 @@ public class QuestionRepository {
 //        return mAllQuestions;
 //    }
 
-    public LiveData<List<Questions>> getQuestion(String category){
+    //with categories
+
+    public LiveData<List<Questions>> getQuestions(String category){
 
         mAllQuestions = mQuestionDao.getQuestionsByCategory(category);
 

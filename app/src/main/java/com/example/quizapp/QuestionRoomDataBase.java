@@ -51,13 +51,15 @@ abstract class QuestionRoomDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            questionDao.insert(new Questions("What is Android?", "OS", "Browser", "Software", "Hard Drive", 1,"computers"));
-            questionDao.insert(new Questions("RAM Stands for what ?", "Operating System", "Browser", "Random Access Memory", "CD Project", 3,"computers"));
-            questionDao.insert(new Questions("Chrome is what ?", "System Software", "Browser", "Middle Ware", "Windows", 2,"JAVA"));
-            questionDao.insert(new Questions("HTML is what ?", "Scipting Language", "Programming Language", "Software", "Hyper Text Markup Language", 4,"JAVA"));
-            questionDao.insert(new Questions("Unity is used for ?", "Game Developement", "Web Development", "Graphics Design", "3-D Modling", 2,"JAVA"));
-            questionDao.insert(new Questions("What is OS", "Hardware", "System Software", "PC Software", "Hard Drive", 2,"JAVA"));
-            questionDao.insert(new Questions("IP stand for what? ", "Language", "Intenet Protocol", "Graphics", "Random", 2,"computers"));
+            questionDao.insert(new Questions("What is Android?", "OS", "Browser", "Software", "Hard Drive", 1,"Computers"));
+            questionDao.insert(new Questions("RAM Stands for what ?", "Operating System", "Browser", "Random Access Memory", "CD Project", 3,"History"));
+            questionDao.insert(new Questions("Chrome is what ?", "System Software", "Browser", "Middle Ware", "Windows", 2,"Computers"));
+            questionDao.insert(new Questions("HTML is what ?", "Scipting Language", "Programming Language", "Software", "Hyper Text Markup Language", 4,"Computers"));
+            questionDao.insert(new Questions("Unity is used for ?", "Game Developement", "Web Development", "Graphics Design", "3-D Modling", 2,"Computers"));
+            questionDao.insert(new Questions("What is OS", "Hardware", "System Software", "PC Software", "Hard Drive", 2,"History"));
+            questionDao.insert(new Questions("IP stand for what? ", "Language", "Intenet Protocol", "Graphics", "Random", 2,"History"));
+            questionDao.insert(new Questions("What is pc", "personal computer", "System Software", "PC Software", "Hard Drive", 1,"History"));
+            questionDao.insert(new Questions("room : is part what  ", "Language", "jetpack", "Graphics", "Random", 2,"History"));
             return null;
         }
     }

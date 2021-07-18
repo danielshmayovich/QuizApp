@@ -6,11 +6,12 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class PlayActivicy extends AppCompatActivity {
+public class PlayActivity extends AppCompatActivity {
+
+
 
     private long backPressedTime;
 
@@ -20,14 +21,15 @@ public class PlayActivicy extends AppCompatActivity {
         setContentView(R.layout.activity_play);
 
         Button buttonplay = findViewById(R.id.bt_play);
-        buttonplay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PlayActivicy.this,CategoryActivity.class); // CategoryActivity
-                startActivity(intent);
-            }
+        buttonplay.setOnClickListener(v -> {
+            Intent intent = new Intent(PlayActivity.this,CategoryActivity.class);
+            startActivity(intent);
         });
+
+
     }
+
+
     @Override
     public void onBackPressed() {
 

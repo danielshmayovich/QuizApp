@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class TimerDialog {
 
@@ -33,7 +32,7 @@ public class TimerDialog {
             public void onClick(View v) {
 
                 timerDialog.dismiss();
-                Intent intent = new Intent(mContext,PlayActivicy.class);
+                Intent intent = new Intent(mContext, PlayActivity.class);
                 mContext.startActivity(intent);
 
             }

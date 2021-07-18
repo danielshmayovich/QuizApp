@@ -10,7 +10,7 @@
         android:theme="@style/Theme.QuizApp"
         tools:ignore="ExtraText">
         <activity android:name=".CategoryActivity"></activity>
-        <activity android:name=".PlayActivicy" />
+        <activity android:name=".PlayActivity" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".SplashActivity">

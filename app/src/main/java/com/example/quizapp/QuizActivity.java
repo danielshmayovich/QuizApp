@@ -68,7 +68,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private long backPressedTime;
 
-    private String categoryValue = "";
+    private String CategoryValue ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,11 +88,12 @@ public class QuizActivity extends AppCompatActivity {
         playAudioForAnswers = new PlayAudioForAnswers(this);
 
         Intent intent = getIntent();
-        categoryValue = intent.getStringExtra("Category");
+        CategoryValue = intent.getStringExtra("Category");
 
 
         questionViewModel = ViewModelProviders.of(this).get(QuestionViewModel.class);
-        questionViewModel.getAllQuestionByCategory("categoryValue").observe(this, new Observer<List<Questions>>() {
+        questionViewModel.getAllQuestionByCategory(CategoryValue).observe(this, new Observer<List<Questions>>() {
+       // questionViewModel.getmAllQuestions().observe(this, new Observer<List<Questions>>() {
             @Override
             public void onChanged(@Nullable List<Questions> questions) {
                 Toast.makeText(QuizActivity.this, "Get IT :)", Toast.LENGTH_SHORT).show();
@@ -586,7 +587,7 @@ public class QuizActivity extends AppCompatActivity {
         if (backPressedTime + 2000 > System.currentTimeMillis()){
 
 
-            Intent intent = new Intent(QuizActivity.this,PlayActivicy.class);
+            Intent intent = new Intent(QuizActivity.this, PlayActivity.class);
             startActivity(intent);
 
 
