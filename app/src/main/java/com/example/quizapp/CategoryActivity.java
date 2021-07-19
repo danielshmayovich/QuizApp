@@ -8,17 +8,21 @@ import android.widget.Button;
 import android.widget.Switch;
 
 public class CategoryActivity extends AppCompatActivity  implements View.OnClickListener {
-    Button btComputers,btHistory;
+    Button btSport,btMusic,btScience,btMovies;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        btComputers = findViewById(R.id.bt_Computers);
-        btHistory = findViewById(R.id.bt_History);
+        btSport = findViewById(R.id.bt_Sport);
+        btMusic = findViewById(R.id.bt_Music);
+        btScience = findViewById(R.id.bt_Science);
+        btMovies = findViewById(R.id.bt_Movies);
 
-        btComputers.setOnClickListener(this);
-        btHistory.setOnClickListener(this);
+        btSport.setOnClickListener(this);
+        btMusic.setOnClickListener(this);
+        btScience.setOnClickListener(this);
+        btMovies.setOnClickListener(this);
 
     }
 
@@ -27,17 +31,29 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
 
         switch (view.getId()){
 
-            case R.id.bt_Computers:
+            case R.id.bt_Sport:
 
-                Intent intentComputers = new Intent(CategoryActivity.this,QuizActivity.class);
-                intentComputers.putExtra("Category","Computers");
-                startActivity(intentComputers);
+                Intent intentSport = new Intent(CategoryActivity.this,QuizActivity.class);
+                intentSport.putExtra("Category","Sport");
+                startActivity(intentSport);
                 break;
 
-            case R.id.bt_History:
-                Intent intentHistory = new Intent(CategoryActivity.this,QuizActivity.class);
-                intentHistory.putExtra("Category","History");
-                startActivity(intentHistory);
+            case R.id.bt_Music:
+                Intent intentMusic = new Intent(CategoryActivity.this,QuizActivity.class);
+                intentMusic.putExtra("Category","Music");
+                startActivity(intentMusic);
+                break;
+
+            case R.id.bt_Science:
+                Intent intentScience = new Intent(CategoryActivity.this,QuizActivity.class);
+                intentScience.putExtra("Category","Science");
+                startActivity(intentScience);
+                break;
+
+            case R.id.bt_Movies:
+                Intent intentMovies = new Intent(CategoryActivity.this,QuizActivity.class);
+                intentMovies.putExtra("Category","Movies");
+                startActivity(intentMovies);
                 break;
 
 

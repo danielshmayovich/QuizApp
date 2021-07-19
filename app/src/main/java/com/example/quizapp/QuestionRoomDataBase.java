@@ -8,7 +8,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
-@Database(entities = {Questions.class},version = 4)
+@Database(entities = {Questions.class},version = 5)
 abstract class QuestionRoomDatabase extends RoomDatabase {
 
     private static QuestionRoomDatabase INSTANCE;
@@ -51,15 +51,42 @@ abstract class QuestionRoomDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            questionDao.insert(new Questions("What is Android?", "OS", "Browser", "Software", "Hard Drive", 1,"Computers"));
-            questionDao.insert(new Questions("RAM Stands for what ?", "Operating System", "Browser", "Random Access Memory", "CD Project", 3,"History"));
-            questionDao.insert(new Questions("Chrome is what ?", "System Software", "Browser", "Middle Ware", "Windows", 2,"Computers"));
-            questionDao.insert(new Questions("HTML is what ?", "Scipting Language", "Programming Language", "Software", "Hyper Text Markup Language", 4,"Computers"));
-            questionDao.insert(new Questions("Unity is used for ?", "Game Developement", "Web Development", "Graphics Design", "3-D Modling", 2,"Computers"));
-            questionDao.insert(new Questions("What is OS", "Hardware", "System Software", "PC Software", "Hard Drive", 2,"History"));
-            questionDao.insert(new Questions("IP stand for what? ", "Language", "Intenet Protocol", "Graphics", "Random", 2,"History"));
-            questionDao.insert(new Questions("What is pc", "personal computer", "System Software", "PC Software", "Hard Drive", 1,"History"));
-            questionDao.insert(new Questions("room : is part what  ", "Language", "jetpack", "Graphics", "Random", 2,"History"));
+            questionDao.insert(new Questions("Who won the world cup in 2014?", "Argentina", "Brazil", "Germany", "France", 3,"Sport"));
+            questionDao.insert(new Questions("How many Grand Slam titles Rafael Nadal have?","20", "25", "18","15", 1,"Sport"));
+            questionDao.insert(new Questions("The Olympics are held every how many years?","5", "2", "4","8", 3,"Sport"));
+            questionDao.insert(new Questions("Tiger Woods is a","LA Lakers", "Washington Wizards", "Chicago bulls","NY Knicks", 4,"Sport"));
+            questionDao.insert(new Questions("The last teem Michael Jordan played for was","LA Lakers", "Washington Wizards", "Chicago bulls","NY Knicks",  2,"Sport"));
+            questionDao.insert(new Questions("Cristiano Ronaldo plays for","Portugal", "Spain", "Argentina","Chile", 1,"Sport"));
+            questionDao.insert(new Questions("Cristiano Ronaldo plays for","Portugal", "Spain", "Argentina","Chile", 1,"Sport"));
+            questionDao.insert(new Questions("The NFL is the top league for","Basketball", "Soccer", "Hockey","Football", 4,"Sport"));
+            questionDao.insert(new Questions("Which of the following won the Champions League","Neymar", "Paul Pogba", "Antoine Griezmann","Eden Hazard ", 1,"Sport"));
+            questionDao.insert(new Questions("Which of the following clubs is not from London","Tottenham", "Chelsea", "Everton","tArsenal", 3,"Sport"));
+            questionDao.insert(new Questions("Who is the top scorer in the history of the EuroLeague","Juan Carlos Navarro", "Spanoulis", "Anthony Parker","Diamantidis", 2,"Sport"));
+
+            questionDao.insert(new Questions("In which year did Justin Bieber release Baby","2012", "2009", "2006","2007", 2,"Music"));
+            questionDao.insert(new Questions("Who sang in James Bond movie (Skyfall)","Adele", "Rihanna", "Tina Turner","Madonna", 1,"Music"));
+            questionDao.insert(new Questions("What is the real name of Elton john","Paul David Hewson", "Robyn Fenty", "Stevland Hardaway Judkins","Reginald Dwight", 4,"Music"));
+            questionDao.insert(new Questions("Robert Plant was the lead singer of which rock band","Green Day", "The Rembrandts", "Led Zeppelin","Guro", 3,"Music"));
+            questionDao.insert(new Questions("Who was the youngest beatle","Paul McCarthney", "Ringo Starr", "George Harrison","John Lennon", 3,"Music"));
+            questionDao.insert(new Questions("Celine Dion won the Eurovision for","France", "Swiss", "Spain","Israel", 2,"Music"));
+
+            questionDao.insert(new Questions("What planet is closest to the sun","Mercury", "Neptune", "Jupiter","Venus", 1,"Science"));
+            questionDao.insert(new Questions("What is the largest planet","Mercury", "Neptune", "Jupiter","Venus", 3,"Science"));
+            questionDao.insert(new Questions("How many continents are there in the world","7", "4", "5","9", 1,"Science"));
+
+            questionDao.insert(new Questions("Who is 007","Superman", "James Bond", "Ben Afflek","Richard Harrison", 2,"Movies"));
+            questionDao.insert(new Questions("Who is part of the Avengers","Batman", "Doom", "Wolverine","Hulk", 4,"Movies"));
+            questionDao.insert(new Questions("Who directed \"Kill Bill\"","Tarantino", "Spielberg", "Scorsese Martin","Christopher Nolan", 1,"Movies"));
+            questionDao.insert(new Questions("Who directed \"Inception\"","Tarantino", "Spielberg", "Scorsese Martin","Christopher Nolan", 4,"Movies"));
+            questionDao.insert(new Questions("Who played \"The Gladiator\"","Gerard Butler", "Tom Cruz", "Russell Crowe","Brad Pitt", 2,"Movies"));
+            questionDao.insert(new Questions("25.\tWho played \"The Mask\"","Jim Carrey", "Sasha Baron Cohen", "Adam Sandler","Brad Pitt", 1,"Movies"));
+
+
+
+
+
+
+
             return null;
         }
     }

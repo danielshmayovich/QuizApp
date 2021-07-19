@@ -1,49 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/main_background"
-    tools:context=".CategoryActivity">
+    android:gravity="center"
+    tools:context=".ResultActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="440dp">
+
+        <Button
+            android:id="@+id/bt_Sport"
+            android:layout_width="410dp"
+            android:layout_height="80dp"
+            android:background="@drawable/dialog_bt_bg"
+            android:padding="20dp"
+            android:text="Sport"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:textAllCaps="false"
+            android:textColor="@color/dialogColor"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp" />
 
 
-    <Button
-        android:id="@+id/bt_Computers"
-        android:layout_width="400dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="352dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_weight="1"
-        android:background="@drawable/submit_bt_background"
-        android:padding="20dp"
-        android:text="Computers"
-        android:textAllCaps="false"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/bt_Music"
+            android:layout_width="410dp"
+            android:layout_height="80dp"
+            android:background="@drawable/dialog_bt_bg"
+            android:padding="20dp"
+            android:text="Music"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:textAllCaps="false"
+            android:textColor="@color/dialogColor"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp" />
 
-    <Button
-        android:id="@+id/bt_History"
-        android:layout_width="400dp"
-        android:layout_height="150dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_weight="1"
-        android:background="@drawable/submit_bt_background"
-        android:padding="20dp"
-        android:text="History"
-        android:textAllCaps="false"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="141dp" />
+        <Button
+            android:id="@+id/bt_Movies"
+            android:layout_width="410dp"
+            android:layout_height="80dp"
+            android:background="@drawable/dialog_bt_bg"
+            android:padding="20dp"
+            android:text="Movies"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:textAllCaps="false"
+            android:textColor="@color/dialogColor"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp" />
+        <Button
+            android:id="@+id/bt_Science"
+            android:layout_width="410dp"
+            android:layout_height="80dp"
+            android:background="@drawable/dialog_bt_bg"
+            android:padding="20dp"
+            android:text="Science"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:textAllCaps="false"
+            android:textColor="@color/dialogColor"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp" />
 
-
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</LinearLayout>

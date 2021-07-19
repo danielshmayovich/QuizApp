@@ -65,7 +65,7 @@
             android:padding="10dp"
             android:textAlignment="textStart"
             android:textStyle="bold"
-            />
+            android:gravity="start" />
         <TextView
             android:id="@+id/result_tv_wrong_Ques"
             android:layout_width="match_parent"
@@ -76,7 +76,7 @@
             android:padding="10dp"
             android:textAlignment="textStart"
             android:textStyle="bold"
-            />
+            android:gravity="start" />
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
