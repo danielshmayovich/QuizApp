@@ -33,20 +33,12 @@ public class QuizActivity extends AppCompatActivity {
     RadioButton rb1,rb2,rb3,rb4;
     RadioGroup rbGroup;
     Button buttonNext;
-
     boolean answerd = false;
-
-
     List<Questions> quesList;
     Questions currentQ;
-
-
     private int questionCounter=0,questionTotalCount;
-
     private QuestionViewModel questionViewModel;
-
     private ColorStateList textColorofButtons;
-
     private Handler handler = new Handler();
 
     private int correctAns = 0,wrongAns =0;
@@ -130,6 +122,7 @@ public class QuizActivity extends AppCompatActivity {
 
         quesList = questions;
 
+
         startQuiz();
 
     }
@@ -145,7 +138,6 @@ public class QuizActivity extends AppCompatActivity {
 
         rbGroup.clearCheck();
 
-
         rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_a));
         rb2.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_b));
         rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_c));
@@ -156,8 +148,7 @@ public class QuizActivity extends AppCompatActivity {
         rb3.setTextColor(Color.BLACK);
         rb4.setTextColor(Color.BLACK);
 
-
-        questionTotalCount = quesList.size();
+        questionTotalCount = quesList.size() + 1;
         Collections.shuffle(quesList);
         if (questionCounter < questionTotalCount -1){
 
