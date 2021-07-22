@@ -19,22 +19,23 @@
 
         <ImageView
             android:id="@+id/splash_imgView"
-            android:src="@drawable/splash_screen_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
-        <TextView
-            android:id="@+id/txt_Splash_logo_text"
-            android:text="Go Quiz App"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:textColor="#BE8124"
-            android:gravity="center_horizontal" />
+            android:layout_height="447dp"
+            android:src="@drawable/trivia_anim" />
+
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_Splash_logo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="Go Quiz App"
+        android:textAlignment="center"
+        android:textColor="#BE8124"
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

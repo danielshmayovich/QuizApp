@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.Switch;
 
 public class CategoryActivity extends AppCompatActivity  implements View.OnClickListener {
-    Button btSport,btMusic,btScience,btMovies;
+    Button btSport,btMusic,btScience,btMovies,btTechnology;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,11 +18,15 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
         btMusic = findViewById(R.id.bt_Music);
         btScience = findViewById(R.id.bt_Science);
         btMovies = findViewById(R.id.bt_Movies);
+        btTechnology = findViewById(R.id.bt_Technology);
+
 
         btSport.setOnClickListener(this);
         btMusic.setOnClickListener(this);
         btScience.setOnClickListener(this);
         btMovies.setOnClickListener(this);
+        btTechnology.setOnClickListener(this);
+
 
     }
 
@@ -54,6 +58,12 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
                 Intent intentMovies = new Intent(CategoryActivity.this,QuizActivity.class);
                 intentMovies.putExtra("Category","Movies");
                 startActivity(intentMovies);
+                break;
+
+            case R.id.bt_Technology:
+                Intent intentTechnology = new Intent(CategoryActivity.this,QuizActivity.class);
+                intentTechnology.putExtra("Category","Technology");
+                startActivity(intentTechnology);
                 break;
 
 

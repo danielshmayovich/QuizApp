@@ -4,8 +4,12 @@
     <color name="colorPrimaryDark">#3D3D37</color>
     <color name="colorAccent">#D81B60</color>
     <color name="bg_Color">#ecdaa3</color>
+    <color name="bg_background">#086A77</color>
     <color name="timerFontColor">#CEC2C2</color>
     <color name="FontColor">#CEC2C2</color>
-    <color name="dialogColor">#FCFCFC</color>
+    <color name="dialogColor">#ffff</color>
+    <color name="RBColor">#1C1717</color>
+    <color name="textactivityColor">#00BCD4</color>
+    <color name="finalDialog">#4CAF50</color>
 
 </resources>

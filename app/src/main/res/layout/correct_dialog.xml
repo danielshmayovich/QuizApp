@@ -14,9 +14,9 @@
         android:padding="5dp"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/RBColor"
         android:layout_gravity="center"
-        android:textSize="30sp"
+        android:textSize="35sp"
         />
 
     <TextView
@@ -29,9 +29,9 @@
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:textStyle="bold"
-        android:textColor="#000000"
+        android:textColor="@color/RBColor"
         android:layout_gravity="center"
-        android:textSize="22sp"
+        android:textSize="30sp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
         />
@@ -44,8 +44,8 @@
         android:layout_gravity="center"
         android:text="OK"
         android:textStyle="bold"
-        android:textColor="#fff"
-        android:textSize="30sp"
+        android:textColor="@color/RBColor"
+        android:textSize="35sp"
         android:background="@drawable/dialog_bt_bg"
         />
 </LinearLayout>

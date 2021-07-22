@@ -121,7 +121,7 @@ public class QuizActivity extends AppCompatActivity {
     private void fetchContent(List<Questions> questions) {
 
         quesList = questions;
-
+        Collections.shuffle(quesList);
 
         startQuiz();
 
@@ -149,7 +149,8 @@ public class QuizActivity extends AppCompatActivity {
         rb4.setTextColor(Color.BLACK);
 
         questionTotalCount = quesList.size() + 1;
-        Collections.shuffle(quesList);
+       // Random rand = new Random();
+       // Collections.shuffle(quesList);
         if (questionCounter < questionTotalCount -1){
 
             currentQ = quesList.get(questionCounter);

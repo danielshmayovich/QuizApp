@@ -54,13 +54,12 @@ abstract class QuestionRoomDatabase extends RoomDatabase {
             questionDao.insert(new Questions("Who won the world cup in 2014?", "Argentina", "Brazil", "Germany", "France", 3,"Sport"));
             questionDao.insert(new Questions("How many Grand Slam titles Rafael Nadal have?","20", "25", "18","15", 1,"Sport"));
             questionDao.insert(new Questions("The Olympics are held every how many years?","5", "2", "4","8", 3,"Sport"));
-            questionDao.insert(new Questions("Tiger Woods is a","LA Lakers", "Washington Wizards", "Chicago bulls","NY Knicks", 4,"Sport"));
+            questionDao.insert(new Questions("Tiger Woods is a","Swimmer", "Basketball coach", "Tennis player","Golf player", 4,"Sport"));
             questionDao.insert(new Questions("The last teem Michael Jordan played for was","LA Lakers", "Washington Wizards", "Chicago bulls","NY Knicks",  2,"Sport"));
-            questionDao.insert(new Questions("Cristiano Ronaldo plays for","Portugal", "Spain", "Argentina","Chile", 1,"Sport"));
             questionDao.insert(new Questions("Cristiano Ronaldo plays for","Portugal", "Spain", "Argentina","Chile", 1,"Sport"));
             questionDao.insert(new Questions("The NFL is the top league for","Basketball", "Soccer", "Hockey","Football", 4,"Sport"));
             questionDao.insert(new Questions("Which of the following won the Champions League","Neymar", "Paul Pogba", "Antoine Griezmann","Eden Hazard ", 1,"Sport"));
-            questionDao.insert(new Questions("Which of the following clubs is not from London","Tottenham", "Chelsea", "Everton","tArsenal", 3,"Sport"));
+            questionDao.insert(new Questions("Which of the following clubs is not from London","Tottenham", "Chelsea", "Everton","Arsenal", 3,"Sport"));
             questionDao.insert(new Questions("Who is the top scorer in the history of the EuroLeague","Juan Carlos Navarro", "Spanoulis", "Anthony Parker","Diamantidis", 2,"Sport"));
 
             questionDao.insert(new Questions("In which year did Justin Bieber release Baby","2012", "2009", "2006","2007", 2,"Music"));
@@ -82,9 +81,14 @@ abstract class QuestionRoomDatabase extends RoomDatabase {
             questionDao.insert(new Questions("25.\tWho played \"The Mask\"","Jim Carrey", "Sasha Baron Cohen", "Adam Sandler","Brad Pitt", 1,"Movies"));
 
 
-
-
-
+            questionDao.insert(new Questions("Which popular company designed the first CPU","Apple", "Dell", "Intel","IBM", 3,"Technology"));
+            questionDao.insert(new Questions("Which of the following is not a web browser","Chrome", "Google-Drive", "Safari","Edge", 2,"Technology"));
+            questionDao.insert(new Questions("What company developed a computer with the codename \"Lisa\"","Apple", "Microsoft", "Intel","IBM", 1,"Technology"));
+            questionDao.insert(new Questions("What does \"IT\" stand for","Integrated Technology", "Individual Technology", "Information Technology","Implied Technology", 3,"Technology"));
+            questionDao.insert(new Questions("Which of the following is not a software language","PHP", "C++", "C#","Docker", 4,"Technology"));
+            questionDao.insert(new Questions(" When was the internet created","1968", "1972", "1989","1992", 1,"Technology"));
+            questionDao.insert(new Questions("How many bits make a byte","16 bits", "8 bits", "24 bits","12 bits", 2,"Technology"));
+            questionDao.insert(new Questions("What is the meaning of CPU","Central Processing Unit", "Critical Processing Unit", "Crucial Processing Unit","Central Printing Unit", 1,"Technology"));
 
 
             return null;

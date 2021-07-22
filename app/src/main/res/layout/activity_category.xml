@@ -8,66 +8,103 @@
     android:gravity="center"
     tools:context=".ResultActivity">
 
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/bg_background"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        android:text="Choose Category : "
+        android:textAlignment="center"
+        android:textColor="#ffff"
+
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_height="440dp">
+        android:layout_height="570dp">
 
         <Button
             android:id="@+id/bt_Sport"
             android:layout_width="410dp"
-            android:layout_height="80dp"
-            android:background="@drawable/dialog_bt_bg"
+            android:layout_height="wrap_content"
+            android:background="#2196F3"
             android:padding="20dp"
             android:text="Sport"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
             android:textAllCaps="false"
             android:textColor="@color/dialogColor"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:layout_marginRight="10dp" />
 
 
         <Button
             android:id="@+id/bt_Music"
             android:layout_width="410dp"
-            android:layout_height="80dp"
-            android:background="@drawable/dialog_bt_bg"
+            android:layout_height="wrap_content"
+            android:background="#2196F3"
             android:padding="20dp"
             android:text="Music"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
             android:textAllCaps="false"
             android:textColor="@color/dialogColor"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:layout_marginRight="10dp" />
 
         <Button
             android:id="@+id/bt_Movies"
             android:layout_width="410dp"
-            android:layout_height="80dp"
-            android:background="@drawable/dialog_bt_bg"
+            android:layout_height="wrap_content"
+            android:background="#2196F3"
             android:padding="20dp"
             android:text="Movies"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
             android:textAllCaps="false"
             android:textColor="@color/dialogColor"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:layout_marginRight="10dp" />
         <Button
             android:id="@+id/bt_Science"
             android:layout_width="410dp"
-            android:layout_height="80dp"
-            android:background="@drawable/dialog_bt_bg"
+            android:layout_height="wrap_content"
+            android:background="#2196F3"
             android:padding="20dp"
             android:text="Science"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
             android:textAllCaps="false"
             android:textColor="@color/dialogColor"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:layout_marginRight="10dp" />
 
+        <Button
+            android:id="@+id/bt_Technology"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="#2196F3"
+            android:padding="20dp"
+            android:text="Technology"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:textAllCaps="false"
+            android:textColor="@color/dialogColor"
+            android:textSize="25sp"
+            />
+
     </LinearLayout>
+
 </LinearLayout>
