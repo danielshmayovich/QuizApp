@@ -88,7 +88,7 @@ public class QuizActivity extends AppCompatActivity {
        // questionViewModel.getmAllQuestions().observe(this, new Observer<List<Questions>>() {
             @Override
             public void onChanged(@Nullable List<Questions> questions) {
-                Toast.makeText(QuizActivity.this, "Get IT :)", Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(QuizActivity.this, "Get IT :)", Toast.LENGTH_SHORT).show();
 
                 fetchContent(questions);
 
@@ -165,7 +165,7 @@ public class QuizActivity extends AppCompatActivity {
             answerd = false;
 
 
-            buttonNext.setText("Confirm");
+            //buttonNext.setText("Confirm");
 
             textViewQuestionCount.setText("Questions: " + questionCounter +"/" +(questionTotalCount-1));
 
@@ -177,7 +177,7 @@ public class QuizActivity extends AppCompatActivity {
         }else {
 
 
-            Toast.makeText(this, "Quiz Finished", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "Quiz Finished", Toast.LENGTH_SHORT).show();
 
             rb1.setClickable(false);
             rb2.setClickable(false);
@@ -270,7 +270,7 @@ public class QuizActivity extends AppCompatActivity {
 
                     }else {
 
-                        Toast.makeText(QuizActivity.this, "Please Select Answer", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(QuizActivity.this, "Please Select Answer", Toast.LENGTH_SHORT).show();
 
                     }
 
@@ -531,7 +531,7 @@ public class QuizActivity extends AppCompatActivity {
 
         if (timeLeftinMillis == 0){
 
-            Toast.makeText(this, "Times Up!", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "Times Up!", Toast.LENGTH_SHORT).show();
 
             handler.postDelayed(new Runnable() {
                 @Override
@@ -585,7 +585,7 @@ public class QuizActivity extends AppCompatActivity {
 
         }else {
 
-            Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
 
         }
 

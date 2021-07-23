@@ -37,7 +37,7 @@ public class PlayActivity extends AppCompatActivity {
 
             new AlertDialog.Builder(this)
                     .setTitle("Do you want to Exit ?")
-                    .setTitle("Are you Sure Do you want to Exit ?")
+                    //.setTitle("Are you Sure Do you want to Exit ?")
                     .setNegativeButton("No",null)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
@@ -52,11 +52,11 @@ public class PlayActivity extends AppCompatActivity {
 
         }else {
 
-            Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
+        //    Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
 
         }
 
-        backPressedTime = System.currentTimeMillis();
+       // backPressedTime = System.currentTimeMillis();
 
     }
 

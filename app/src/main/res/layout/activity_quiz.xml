@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/main_background"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
@@ -15,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Question: 1/10"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textColor="@color/dialogColor"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
@@ -25,7 +24,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <TextView
@@ -37,7 +36,7 @@
             android:text="Score: 0"
             android:textStyle="bold"
             android:textColor="@color/dialogColor"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:paddingLeft="10dp" />
 
 
@@ -52,20 +51,19 @@
             android:text="00:30"
             android:textAlignment="textEnd"
             android:textColor="@color/dialogColor"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtQuetsionContainer"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="wrap_content"
             android:textSize="22sp"
             android:textColor="@color/textactivityColor"
             android:textStyle="bold"
@@ -84,14 +82,14 @@
 
         <RadioGroup
             android:id="@+id/raido_group"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent" >
 
             <RadioButton
                 android:id="@+id/radio_button1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/default_option_a"
                 android:button="@null"
@@ -99,10 +97,13 @@
                 android:padding="10dp"
                 android:paddingStart="90dp"
                 android:paddingLeft="90dp"
+                android:layoutDirection = "rtl"
+                android:textAlignment="textStart"
+                android:layout_gravity="start"
                 android:text="OS"
                 android:textColor="@color/RBColor"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                tools:ignore="RtlSymmetry" />
 
             <RadioButton
                 android:id="@+id/radio_button2"
@@ -117,9 +118,9 @@
                 android:background="@drawable/default_option_b"
                 android:textSize="20sp"
                 android:textColor="@color/RBColor"
-                android:textStyle="bold"
                 android:paddingStart="90dp"
-                android:paddingLeft="90dp" />
+                android:paddingLeft="90dp"
+                tools:ignore="RtlSymmetry" />
 
             <RadioButton
                 android:id="@+id/radio_button3"
@@ -135,8 +136,8 @@
                 android:paddingLeft="90dp"
                 android:text="Browser"
                 android:textColor="@color/RBColor"
-                android:textStyle="bold"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="RtlSymmetry" />
 
             <RadioButton
                 android:id="@+id/radio_button4"
@@ -151,27 +152,25 @@
                 android:text="Random Access Memory"
                 android:paddingStart="90dp"
                 android:textColor="@color/RBColor"
-                android:textStyle="bold"
                 android:textSize="20sp"
-                android:paddingLeft="90dp" />
+                android:paddingLeft="90dp"
+                tools:ignore="RtlSymmetry" />
         </RadioGroup>
     </LinearLayout>
 
-    <LinearLayout
+
+    <Button
+        android:id="@+id/button_Next"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal">
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:background="@drawable/submit_bt_background"
+        android:padding="5dp"
+        android:text="Confirm"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="radio_button4" />
 
-        <Button
-            android:id="@+id/button_Next"
-            android:layout_width="50dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_next_arrow"
-            android:padding="20dp"
-            android:textAllCaps="false" />
-    </LinearLayout>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

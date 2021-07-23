@@ -14,7 +14,7 @@ public class ResultActivity extends AppCompatActivity {
 
     TextView txtHighScore;
     TextView txtTotalQuizQuestion,txtCorrectQuestion,txtWrongQuestion;
-    Button btStartQuizAgain,btMainMenu;
+    Button btMainMenu;
 
     int highScore =0;
 
@@ -34,7 +34,7 @@ public class ResultActivity extends AppCompatActivity {
         txtWrongQuestion = findViewById(R.id.result_tv_wrong_Ques);
 
         btMainMenu = findViewById(R.id.bt_result_main_menu);
-        btStartQuizAgain = findViewById(R.id.bt_result_play_again);
+     //   btStartQuizAgain = findViewById(R.id.bt_result_play_again);
 
 
         btMainMenu.setOnClickListener(new View.OnClickListener() {
@@ -48,15 +48,16 @@ public class ResultActivity extends AppCompatActivity {
         });
 
 
-        btStartQuizAgain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(ResultActivity.this,QuizActivity.class);
-                startActivity(intent);
-
-            }
-        });
+//        btStartQuizAgain.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent intent = new Intent(ResultActivity.this,CategoryActivity.class);
+//
+//                startActivity(intent);
+//
+//            }
+//        });
 
 
         loadHighScore();
@@ -118,7 +119,7 @@ public class ResultActivity extends AppCompatActivity {
 
         }else {
 
-            Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
 
         }
 

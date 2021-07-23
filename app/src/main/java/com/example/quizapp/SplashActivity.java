@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
     private final static int EXIT_CODE = 100;
 
     ImageView imageViewSplashLogo;
-    TextView textViewGoQuiz;
+    //TextView textViewGoQuiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +25,12 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         imageViewSplashLogo = findViewById(R.id.splash_imgView);
-        textViewGoQuiz = findViewById(R.id.txt_Splash_logo_text);
+      //  textViewGoQuiz = findViewById(R.id.txt_Splash_logo_text);
 
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.transition);
         imageViewSplashLogo.setAnimation(animation);
-        textViewGoQuiz.setAnimation(animation);
+     //   textViewGoQuiz.setAnimation(animation);
 
 
         Thread thread = new Thread(new Runnable() {

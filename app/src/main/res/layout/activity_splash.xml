@@ -9,7 +9,6 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:orientation="vertical"
@@ -21,21 +20,10 @@
             android:id="@+id/splash_imgView"
             android:layout_width="match_parent"
             android:layout_height="447dp"
-            android:src="@drawable/trivia_anim" />
+            android:src="@drawable/logo_trivia_night" />
 
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txt_Splash_logo_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center_horizontal"
-        android:text="Go Quiz App"
-        android:textAlignment="center"
-        android:textColor="#BE8124"
-        android:textSize="35sp"
-        android:textStyle="bold" />
 
 </LinearLayout>
