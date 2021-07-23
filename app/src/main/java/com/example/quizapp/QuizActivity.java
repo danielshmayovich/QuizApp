@@ -65,7 +65,7 @@ public class QuizActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
+        setContentView(R.layout.activity_quiz2);
 
 
         setupUI();
@@ -83,13 +83,17 @@ public class QuizActivity extends AppCompatActivity {
         CategoryValue = intent.getStringExtra("Category");
 
 
+        String language = getString(R.string.language);
+
         questionViewModel = ViewModelProviders.of(this).get(QuestionViewModel.class);
-        questionViewModel.getAllQuestionByCategory(CategoryValue).observe(this, new Observer<List<Questions>>() {
+        questionViewModel.getAllQuestionByCategory(CategoryValue, language).observe(this, new Observer<List<Questions>>() {
        // questionViewModel.getmAllQuestions().observe(this, new Observer<List<Questions>>() {
             @Override
             public void onChanged(@Nullable List<Questions> questions) {
              //   Toast.makeText(QuizActivity.this, "Get IT :)", Toast.LENGTH_SHORT).show();
-
+                if (questions == null || questions.size() == 0) {
+                    return;
+                }
                 fetchContent(questions);
 
             }
@@ -281,6 +285,22 @@ public class QuizActivity extends AppCompatActivity {
         });
 
     }
+
+    private boolean paused = true;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        paused = false;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        paused = true;
+    }
+
+
 
     private void quizOpeartion() {
 
@@ -537,9 +557,9 @@ public class QuizActivity extends AppCompatActivity {
                 @Override
                 public void run() {
 
-
-                    timerDialog.timerDialog();
-
+                    if (!paused) {
+                        timerDialog.timerDialog();
+                    }
                 }
             },2000);
 
@@ -562,6 +582,8 @@ public class QuizActivity extends AppCompatActivity {
 
 
     private void resultData(){
+
+        finish();
 
         Intent resultofQuiz = new Intent(QuizActivity.this,ResultActivity.class);
         resultofQuiz.putExtra("UserScore", score);
