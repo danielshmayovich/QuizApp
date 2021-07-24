@@ -7,6 +7,7 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 @Database(entities = {Questions.class},version = 7)
 abstract class QuestionRoomDatabase extends RoomDatabase {
@@ -22,6 +23,12 @@ abstract class QuestionRoomDatabase extends RoomDatabase {
                     .fallbackToDestructiveMigration()
                     .addCallback(RoomDBCallback)
                     .build();
+
+//            INSTANCE.beginTransaction();
+//            INSTANCE.endTransaction();
+
+            // or query a dummy select statement
+            INSTANCE.query("select 1", null);
         }
 
         return INSTANCE;
@@ -51,6 +58,7 @@ abstract class QuestionRoomDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
+            Log.d("TRIVIA", "doInBackground: start insert");
             questionDao.insert(new Questions("Who won the world cup in 2014?", "Argentina", "Brazil", "Germany", "France", 3,"Sport", "en"));
             questionDao.insert(new Questions("How many Grand Slam titles Rafael Nadal have?","20", "25", "18","15", 1,"Sport", "en"));
             questionDao.insert(new Questions("The Olympics are held every how many years?","5", "2", "4","8", 3,"Sport", "en"));
@@ -89,7 +97,7 @@ abstract class QuestionRoomDatabase extends RoomDatabase {
             questionDao.insert(new Questions(" When was the internet created","1968", "1972", "1989","1992", 1,"Technology", "en"));
             questionDao.insert(new Questions("How many bits make a byte","16 bits", "8 bits", "24 bits","12 bits", 2,"Technology", "en"));
             questionDao.insert(new Questions("What is the meaning of CPU","Central Processing Unit", "Critical Processing Unit", "Crucial Processing Unit","Central Printing Unit", 1,"Technology", "en"));
-
+            Log.d("TRIVIA", "doInBackground: end insert");
 
             return null;
         }
