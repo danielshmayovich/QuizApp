@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">trivia</string>
-    <string name="language">es</string>
+    <string name="language">en</string>
+    <string name = "editTextTextPersonName">Choose Category :</string>
+    <string name = "bt_Sport">Sport</string>
+    <string name = "bt_Music">Music </string>
+    <string name = "bt_Movies">Movies</string>
+    <string name = "bt_Science">Science</string>
+    <string name = "bt_Technology">Technology</string>
 </resources>

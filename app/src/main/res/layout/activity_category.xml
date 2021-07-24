@@ -15,7 +15,7 @@
         android:ems="10"
         android:gravity="center_horizontal"
         android:inputType="textPersonName"
-        android:text="Choose Category : "
+        android:text="@string/editTextTextPersonName"
         android:textAlignment="center"
         android:textColor="#ffff"
         android:textSize="22sp"

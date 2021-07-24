@@ -17,12 +17,6 @@ public class QuestionRepository {
         mAllQuestions = mQuestionDao.getAllQuestions(language);
     }
 
-    //without categories
-
-//    public LiveData<List<Questions>> getmAllQuestions(){
-//        return mAllQuestions;
-//    }
-
     //with categories
 
     public LiveData<List<Questions>> getQuestions(String category, String language){

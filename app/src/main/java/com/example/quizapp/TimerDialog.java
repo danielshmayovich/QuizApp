@@ -13,13 +13,11 @@ public class TimerDialog {
     private Context mContext;
     private Dialog timerDialog;
 
-
     TimerDialog(Context mContext) {
         this.mContext = mContext;
     }
 
     public void timerDialog(){
-
 
         timerDialog = new Dialog(mContext);
 

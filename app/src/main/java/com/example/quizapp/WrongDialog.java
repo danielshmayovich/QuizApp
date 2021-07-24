@@ -13,9 +13,7 @@ class WrongDialog {
 
     private Context mContext;
     private Dialog wrongAnswerDialog;
-
     private QuizActivity mquizActivity;
-
 
     WrongDialog(Context mContext) {
         this.mContext = mContext;

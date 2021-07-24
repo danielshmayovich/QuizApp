@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 public class PlayActivity extends AppCompatActivity {
 
-
-
     private long backPressedTime;
 
     @Override
@@ -25,17 +23,13 @@ public class PlayActivity extends AppCompatActivity {
             Intent intent = new Intent(PlayActivity.this,CategoryActivity.class);
             startActivity(intent);
         });
-
-
     }
-
 
     @Override
     public void onBackPressed() {
 
         new AlertDialog.Builder(this)
                 .setTitle("Do you want to Exit ?")
-                //.setTitle("Are you Sure Do you want to Exit ?")
                 .setNegativeButton("No",null)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -46,21 +40,14 @@ public class PlayActivity extends AppCompatActivity {
                     }
                 }).create().show();
 
-
-      //  }else {
-
-        //    Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
-
         }
 
-       // backPressedTime = System.currentTimeMillis();
 
 
 
     @Override
     protected void onStop() {
         super.onStop();
-     //   finish();
     }
 
 }

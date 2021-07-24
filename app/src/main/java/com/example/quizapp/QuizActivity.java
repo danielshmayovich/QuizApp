@@ -25,11 +25,8 @@ import java.util.Locale;
 
 public class QuizActivity extends AppCompatActivity {
 
-
     TextView txtQuestion;
     TextView textViewScore,textViewQuestionCount,textViewCountDownTimer;
-
-
     RadioButton rb1,rb2,rb3,rb4;
     RadioGroup rbGroup;
     Button buttonNext;
@@ -40,26 +37,18 @@ public class QuizActivity extends AppCompatActivity {
     private QuestionViewModel questionViewModel;
     private ColorStateList textColorofButtons;
     private Handler handler = new Handler();
-
     private int correctAns = 0,wrongAns =0;
-
     private int score=0;
-
     private TimerDialog timerDialog;
     private WrongDialog wrongDialog;
     private CorrectDialog correctDialog;
-
     private int totalSizeofQuiz;
-
     private int FLAG = 0;
     private PlayAudioForAnswers playAudioForAnswers;
-
     private static final long COUNTDOWN_IN_MILLIS = 30000;
     private CountDownTimer countDownTimer;
     private long timeLeftinMillis;
-
     private long backPressedTime;
-
     private String CategoryValue ="";
 
     @Override
@@ -69,8 +58,8 @@ public class QuizActivity extends AppCompatActivity {
 
 
         setupUI();
-
-        textColorofButtons = rb1.getTextColors();  // this is used to change the text colors of the buttons
+        // this is used to change the text colors of the buttons
+        textColorofButtons = rb1.getTextColors();
 
 
 
@@ -86,15 +75,12 @@ public class QuizActivity extends AppCompatActivity {
 
         questionViewModel = ViewModelProviders.of(this).get(QuestionViewModel.class);
         questionViewModel.getAllQuestionByCategory(CategoryValue,language).observe(this, new Observer<List<Questions>>() {
-       // questionViewModel.getmAllQuestions().observe(this, new Observer<List<Questions>>() {
             @Override
             public void onChanged(@Nullable List<Questions> questions) {
-
+                //first time check the questions
                 if (questions == null || questions.size() == 0) {
                     return;
                 }
-             //   Toast.makeText(QuizActivity.this, "Get IT :)", Toast.LENGTH_SHORT).show();
-
                 fetchContent(questions);
 
             }
@@ -105,84 +91,56 @@ public class QuizActivity extends AppCompatActivity {
 
     void setupUI(){
 
-
         textViewCountDownTimer = findViewById(R.id.txtTimer);
         textViewScore = findViewById(R.id.txtScore);
         textViewQuestionCount = findViewById(R.id.txtTotalQuestion);
         txtQuestion = findViewById(R.id.txtQuetsionContainer);
-
-
         rbGroup = findViewById(R.id.raido_group);
         rb1 = findViewById(R.id.radio_button1);
         rb2 = findViewById(R.id.radio_button2);
         rb3 = findViewById(R.id.radio_button3);
         rb4 = findViewById(R.id.radio_button4);
-
         buttonNext = findViewById(R.id.button_Next);
 
     }
 
-
+        //get all questions from DB and make shuffle between question according category
     private void fetchContent(List<Questions> questions) {
-
         quesList = questions;
         Collections.shuffle(quesList);
-
         startQuiz();
-
     }
 
-    /*
-     *
-     *                      SetQuestionsView() Method
-     *
-     * */
-
-
+    // SetQuestionsView() Method  move all questions according to category
     public void setQuestionView(){
 
         rbGroup.clearCheck();
-
         rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_a));
         rb2.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_b));
         rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_c));
         rb4.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_d));
-
         rb1.setTextColor(Color.BLACK);
         rb2.setTextColor(Color.BLACK);
         rb3.setTextColor(Color.BLACK);
         rb4.setTextColor(Color.BLACK);
 
         questionTotalCount = quesList.size() + 1;
-       // Random rand = new Random();
-       // Collections.shuffle(quesList);
+
         if (questionCounter < questionTotalCount -1){
 
             currentQ = quesList.get(questionCounter);
-
             txtQuestion.setText(currentQ.getQuestion());
             rb1.setText(currentQ.getOptA());
             rb2.setText(currentQ.getOptB());
             rb3.setText(currentQ.getOptC());
             rb4.setText(currentQ.getOptD());
             questionCounter++;
-
             answerd = false;
-
-
-            //buttonNext.setText("Confirm");
-
             textViewQuestionCount.setText("Questions: " + questionCounter +"/" +(questionTotalCount-1));
-
             timeLeftinMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
 
-
-
         }else {
-
-
-          //  Toast.makeText(this, "Quiz Finished", Toast.LENGTH_SHORT).show();
 
             rb1.setClickable(false);
             rb2.setClickable(false);
@@ -193,22 +151,16 @@ public class QuizActivity extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-
                     resultData();
-
                 }
             },2000);
         }
     }
 
 
-
     private void startQuiz() {
 
-
         setQuestionView();
-
-
 
         rbGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -223,7 +175,6 @@ public class QuizActivity extends AppCompatActivity {
                         rb2.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_b));
                         rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_c));
                         rb4.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_d));
-
                         break;
 
                     case R.id.radio_button2:
@@ -232,7 +183,6 @@ public class QuizActivity extends AppCompatActivity {
                         rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_a));
                         rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_c));
                         rb4.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_d));
-
                         break;
 
                     case R.id.radio_button3:
@@ -241,7 +191,6 @@ public class QuizActivity extends AppCompatActivity {
                         rb2.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_b));
                         rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_a));
                         rb4.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_d));
-
                         break;
 
                     case R.id.radio_button4:
@@ -250,13 +199,9 @@ public class QuizActivity extends AppCompatActivity {
                         rb2.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_b));
                         rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_c));
                         rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.default_option_a));
-
                         break;
 
-
                 }
-
-
             }
         });
 
@@ -265,35 +210,28 @@ public class QuizActivity extends AppCompatActivity {
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 if (!answerd){
-
                     if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked() || rb4.isChecked()){
 
                         quizOpeartion();
 
                     }else {
-
-                       // Toast.makeText(QuizActivity.this, "Please Select Answer", Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(QuizActivity.this, "Please Select Answer", Toast.LENGTH_SHORT).show();
                     }
-
                 }
-
-
             }
         });
 
     }
-    private boolean paused = true;
 
+    private boolean paused = true;
+    //call moment before it's appear on screen
     @Override
     protected void onResume() {
         super.onResume();
         paused = false;
     }
-
+    //call moment after no see activity
     @Override
     protected void onPause() {
         super.onPause();
@@ -303,61 +241,37 @@ public class QuizActivity extends AppCompatActivity {
     private void quizOpeartion() {
 
         answerd = true;
-
         countDownTimer.cancel();
-
         RadioButton rbselected =  findViewById(rbGroup.getCheckedRadioButtonId());
-
         int answerNr = rbGroup.indexOfChild(rbselected) +1;
-
-
         checkSolution(answerNr,rbselected);
-
-
 
     }
 
     private void checkSolution(int answerNr, RadioButton rbselected) {
-
 
         switch (currentQ.getAnswer()) {
 
             case 1:
 
                 if (currentQ.getAnswer() == answerNr) {
-
-
-                    rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_correct));
+              rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_correct));
                     rb1.setTextColor(Color.WHITE);
-
                     correctAns++;
-
-
                     score +=10;  // score = score + 10
                     textViewScore.setText("Score: " + String.valueOf(score));
-
                     correctDialog.correctDialog(score,this);
-
                     FLAG = 1;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
-
-
-
 
                 } else {
 
                     changetoIncorrectColor(rbselected);
-
                     wrongAns++;
-
-
                     final String correctAnswer = (String) rb1.getText();
                     wrongDialog.WrongDialog(correctAnswer,this);
-
                     FLAG = 2;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
-
-
                 }
                 break;
 
@@ -365,81 +279,47 @@ public class QuizActivity extends AppCompatActivity {
             case 2:
 
                 if (currentQ.getAnswer() == answerNr) {
-
-
                     rb2.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_correct));
                     rb2.setTextColor(Color.WHITE);
-
                     correctAns++;
-
-
                     score +=10;  // score = score + 10
                     textViewScore.setText("Score: " + String.valueOf(score));
-
                     correctDialog.correctDialog(score,this);
-
                     FLAG = 1;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
 
-
-
-
-                } else {
-
-                    changetoIncorrectColor(rbselected);
-
+                } else
+                    {
+                        changetoIncorrectColor(rbselected);
                     wrongAns++;
-
-
                     final String correctAnswer = (String) rb2.getText();
                     wrongDialog.WrongDialog(correctAnswer,this);
-
                     FLAG = 2;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
-
-
                 }
                 break;
-
 
             case 3:
 
                 if (currentQ.getAnswer() == answerNr) {
 
-
-                    rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_correct));
-                    rb3.setTextColor(Color.WHITE);
-
-
+                     rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_correct));
+                     rb3.setTextColor(Color.WHITE);
                     correctAns++;
-
-
                     score +=10;  // score = score + 10
                     textViewScore.setText("Score: " + String.valueOf(score));
-
                     correctDialog.correctDialog(score,this);
-
                     FLAG = 1;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
-
-
-
 
                 } else {
 
                     changetoIncorrectColor(rbselected);
-
                     wrongAns++;
-
-
                     final String correctAnswer = (String) rb3.getText();
                     wrongDialog.WrongDialog(correctAnswer,this);
-
                     FLAG = 2;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
-
-
-
                 }
                 break;
 
@@ -448,45 +328,28 @@ public class QuizActivity extends AppCompatActivity {
 
                 if (currentQ.getAnswer() == answerNr) {
 
-
                     rb4.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_correct));
                     rb4.setTextColor(Color.WHITE);
-
-
                     correctAns++;
-
-
                     score +=10;  // score = score + 10
                     textViewScore.setText("Score: " + String.valueOf(score));
-
                     correctDialog.correctDialog(score,this);
-
                     FLAG = 1;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
-
-
 
                 } else {
 
                     changetoIncorrectColor(rbselected);
-
                     wrongAns++;
-
-
                     final String correctAnswer = (String) rb4.getText();
                     wrongDialog.WrongDialog(correctAnswer,this);
-
                     FLAG = 2;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
-
-
-
                 }
                 break;
         }
 
         if (questionCounter == questionTotalCount){
-
             buttonNext.setText("Confirm and Finish");
         }
 
@@ -498,11 +361,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
 
-
-
     // The timer code
-
-
     private void startCountDown() {
 
         countDownTimer = new CountDownTimer(timeLeftinMillis,1000) {
@@ -531,36 +390,25 @@ public class QuizActivity extends AppCompatActivity {
         String timeFormatted = String.format(Locale.getDefault(),"%02d:%02d",minutes, seconds);
         textViewCountDownTimer.setText(timeFormatted);
 
-
         if (timeLeftinMillis <10000){
 
             textViewCountDownTimer.setTextColor(Color.RED);
-
             FLAG = 3;
-
             playAudioForAnswers.setAudioforAnswers(FLAG);
 
         }else {
-
             textViewCountDownTimer.setTextColor(ContextCompat.getColor(this,R.color.timerFontColor));
-
         }
 
-
         if (timeLeftinMillis == 0){
-
-          //  Toast.makeText(this, "Times Up!", Toast.LENGTH_SHORT).show();
 
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
 
-
-                   // timerDialog.timerDialog();
                     if (!paused) {
                         timerDialog.timerDialog();
                     }
-
                 }
             },2000);
 
@@ -583,8 +431,7 @@ public class QuizActivity extends AppCompatActivity {
 
 
     private void resultData(){
-        finish();
-
+        finish(); // close activity
         Intent resultofQuiz = new Intent(QuizActivity.this,ResultActivity.class);
         resultofQuiz.putExtra("UserScore", score);
         resultofQuiz.putExtra("TotalQuizQuestions",(questionTotalCount -1));
@@ -599,23 +446,16 @@ public class QuizActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         if (backPressedTime + 2000 > System.currentTimeMillis()){
-
-
             Intent intent = new Intent(QuizActivity.this, PlayActivity.class);
             startActivity(intent);
 
-
         }else {
-
-         //   Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
 
         }
 
         backPressedTime = System.currentTimeMillis();
 
     }
-
-
 
     @Override
     protected void onStop() {
