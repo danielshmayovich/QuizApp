@@ -107,6 +107,24 @@ public class ResultActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
 
+        if (backPressedTime + 2000 > System.currentTimeMillis()){
+
+
+            Intent intent = new Intent(ResultActivity.this,QuizActivity.class);
+            startActivity(intent);
+
+
+        }else {
+
+         //   Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
+
+        }
+
+        backPressedTime = System.currentTimeMillis();
+
+    }
 
 }

@@ -81,19 +81,15 @@ public class QuizActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         CategoryValue = intent.getStringExtra("Category");
-    //extract language from value string
-        String language = getString(R.string.language);
 
 
         questionViewModel = ViewModelProviders.of(this).get(QuestionViewModel.class);
-        questionViewModel.getAllQuestionByCategory(CategoryValue,language).observe(this, new Observer<List<Questions>>() {
+        questionViewModel.getAllQuestionByCategory(CategoryValue).observe(this, new Observer<List<Questions>>() {
        // questionViewModel.getmAllQuestions().observe(this, new Observer<List<Questions>>() {
             @Override
             public void onChanged(@Nullable List<Questions> questions) {
+             //   Toast.makeText(QuizActivity.this, "Get IT :)", Toast.LENGTH_SHORT).show();
 
-                if (questions == null || questions.size() == 0) {
-                    return;
-                }
                 fetchContent(questions);
 
             }
@@ -285,19 +281,7 @@ public class QuizActivity extends AppCompatActivity {
         });
 
     }
-    private boolean paused = true;
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        paused = false;
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        paused = true;
-    }
     private void quizOpeartion() {
 
         answerd = true;
@@ -547,16 +531,14 @@ public class QuizActivity extends AppCompatActivity {
 
         if (timeLeftinMillis == 0){
 
+          //  Toast.makeText(this, "Times Up!", Toast.LENGTH_SHORT).show();
 
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
 
 
-                //    timerDialog.timerDialog();
-                    if (!paused) {
-                        timerDialog.timerDialog();
-                    }
+                    timerDialog.timerDialog();
 
                 }
             },2000);
@@ -581,7 +563,6 @@ public class QuizActivity extends AppCompatActivity {
 
     private void resultData(){
 
-        finish();
         Intent resultofQuiz = new Intent(QuizActivity.this,ResultActivity.class);
         resultofQuiz.putExtra("UserScore", score);
         resultofQuiz.putExtra("TotalQuizQuestions",(questionTotalCount -1));
