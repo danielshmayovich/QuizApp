@@ -3,6 +3,7 @@ package com.example.quizapp;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "questions_table")
@@ -36,7 +37,7 @@ public class Questions {
 
     @ColumnInfo(name = "language")
     private String language;
-
+    @Ignore
     public Questions( String question, String optA, String optB, String optC, String optD, int answer,String category, String language) {
         this.question = question;
         this.optA = optA;

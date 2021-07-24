@@ -27,6 +27,8 @@ public class SplashActivity extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.transition);
         imageViewSplashLogo.setAnimation(animation);
 
+        QuestionRoomDatabase.getInstance(this);
+
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -50,29 +52,30 @@ public class SplashActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == EXIT_CODE) {
-
-            if (resultCode == RESULT_OK) {
-                if (data.getBooleanExtra("EXIT", true)) {
-                    finish();
-                }
-
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if (requestCode == EXIT_CODE) {
+//
+//            if (resultCode == RESULT_OK) {
+//                if (data.getBooleanExtra("EXIT", true)) {
+//                    finish();
+//                }
+//
+//            }
+//        }
+//    }
 
     private void GoPlayActivity() {
 
-        startActivityForResult(new Intent(SplashActivity.this, PlayActivity.class), EXIT_CODE);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
+//        startActivityForResult(new Intent(SplashActivity.this, PlayActivity.class), EXIT_CODE);
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+        startActivity(new Intent(SplashActivity.this, PlayActivity.class));
         finish();
     }
 }

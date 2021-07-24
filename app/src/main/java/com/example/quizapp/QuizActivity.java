@@ -72,8 +72,10 @@ public class QuizActivity extends AppCompatActivity {
         CategoryValue = intent.getStringExtra("Category");
 
         String language = getString(R.string.language);
-
+        Log.d("TRIVIA", "onCreate: before viewmodel");
         questionViewModel = ViewModelProviders.of(this).get(QuestionViewModel.class);
+        Log.d("TRIVIA", "onCreate: calling getAllQuestionByCategory with category=" + CategoryValue);
+
         questionViewModel.getAllQuestionByCategory(CategoryValue,language).observe(this, new Observer<List<Questions>>() {
             @Override
             public void onChanged(@Nullable List<Questions> questions) {
@@ -81,6 +83,8 @@ public class QuizActivity extends AppCompatActivity {
                 if (questions == null || questions.size() == 0) {
                     return;
                 }
+                Log.d("TRIVIA", "questions: " + questions.size());
+
                 fetchContent(questions);
 
             }
@@ -137,6 +141,7 @@ public class QuizActivity extends AppCompatActivity {
             questionCounter++;
             answerd = false;
             textViewQuestionCount.setText("Questions: " + questionCounter +"/" +(questionTotalCount-1));
+            Log.d("TRIVIA", "current question: " + currentQ.getQuestion());
             timeLeftinMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
 
