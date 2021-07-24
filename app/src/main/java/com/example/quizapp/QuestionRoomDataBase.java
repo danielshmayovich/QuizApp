@@ -8,7 +8,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
-@Database(entities = {Questions.class},version = 6)
+@Database(entities = {Questions.class},version = 7)
 abstract class QuestionRoomDatabase extends RoomDatabase {
 
     private static QuestionRoomDatabase INSTANCE;
@@ -52,7 +52,7 @@ abstract class QuestionRoomDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(Void... voids) {
             questionDao.insert(new Questions("Who won the world cup in 2014?", "Argentina", "Brazil", "Germany", "France", 3,"Sport", "en"));
-            questionDao.insert(new Questions("Who won the world cup in 2014?", "Argentina", "Brazil", "Germany", "France", 3,"Sport", "en"));
+            questionDao.insert(new Questions("Who won the world cup in 2014?", "Argentina", "Brazil", "Germany", "France", 3,"Sport", "es"));
 
 
 
