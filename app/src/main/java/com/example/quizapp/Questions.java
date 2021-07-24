@@ -34,7 +34,11 @@ public class Questions {
     @ColumnInfo(name = "category")
     private String category;
 
-    public Questions( String question, String optA, String optB, String optC, String optD, int answer,String category) {
+    @ColumnInfo(name = "language")
+    private String language;
+
+    public Questions( String question, String optA, String optB, String optC, String optD, int answer,String category, String language){
+
         this.question = question;
         this.optA = optA;
         this.optB = optB;
@@ -42,7 +46,7 @@ public class Questions {
         this.optD = optD;
         this.answer = answer;
         this.category = category;
-
+        this.language = language;
     }
 
     Questions() {
@@ -54,6 +58,7 @@ public class Questions {
         this.optD = "";
       //  this.answer = answer;
        this.category = "";
+
     }
 
 
@@ -120,4 +125,13 @@ public class Questions {
     public void setCategory(String  category) {
         this.category = category;
     }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
 }

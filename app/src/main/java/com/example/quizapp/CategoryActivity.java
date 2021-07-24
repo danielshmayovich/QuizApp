@@ -12,7 +12,7 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category2);
+        setContentView(R.layout.activity_category);
 
         btSport = findViewById(R.id.bt_Sport);
         btMusic = findViewById(R.id.bt_Music);
