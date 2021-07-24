@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
-    android:orientation="vertical"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
     tools:context=".QuizActivity">
@@ -171,7 +170,7 @@
         android:text="Confirm"
         android:textAllCaps="false"
         android:textSize="20sp"
-       />
+        app:layout_constraintTop_toTopOf="radio_button4" />
 
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
