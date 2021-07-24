@@ -82,12 +82,17 @@ public class QuizActivity extends AppCompatActivity {
         Intent intent = getIntent();
         CategoryValue = intent.getStringExtra("Category");
 
+        String language = getString(R.string.language);
 
         questionViewModel = ViewModelProviders.of(this).get(QuestionViewModel.class);
-        questionViewModel.getAllQuestionByCategory(CategoryValue).observe(this, new Observer<List<Questions>>() {
+        questionViewModel.getAllQuestionByCategory(CategoryValue,language).observe(this, new Observer<List<Questions>>() {
        // questionViewModel.getmAllQuestions().observe(this, new Observer<List<Questions>>() {
             @Override
             public void onChanged(@Nullable List<Questions> questions) {
+
+                if (questions == null || questions.size() == 0) {
+                    return;
+                }
              //   Toast.makeText(QuizActivity.this, "Get IT :)", Toast.LENGTH_SHORT).show();
 
                 fetchContent(questions);
@@ -280,6 +285,19 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private boolean paused = true;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        paused = false;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        paused = true;
     }
 
     private void quizOpeartion() {
@@ -538,7 +556,10 @@ public class QuizActivity extends AppCompatActivity {
                 public void run() {
 
 
-                    timerDialog.timerDialog();
+                   // timerDialog.timerDialog();
+                    if (!paused) {
+                        timerDialog.timerDialog();
+                    }
 
                 }
             },2000);
@@ -562,6 +583,7 @@ public class QuizActivity extends AppCompatActivity {
 
 
     private void resultData(){
+        finish();
 
         Intent resultofQuiz = new Intent(QuizActivity.this,ResultActivity.class);
         resultofQuiz.putExtra("UserScore", score);

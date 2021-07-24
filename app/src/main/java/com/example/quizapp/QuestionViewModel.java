@@ -16,12 +16,13 @@ public class QuestionViewModel  extends AndroidViewModel {
     public QuestionViewModel(Application application){
 
         super(application);//callback
-        mRepository = new QuestionRepository(application);
+        String language = application.getString(R.string.language);
+        mRepository = new QuestionRepository(application, language);
     }
 
-    LiveData<List<Questions>> getAllQuestionByCategory(String category) {
+    LiveData<List<Questions>> getAllQuestionByCategory(String category, String language) {
 
-        mAllQuestions = mRepository.getQuestions(category);
+        mAllQuestions = mRepository.getQuestions(category,language);
         return mAllQuestions;
     }
 }

@@ -33,24 +33,21 @@ public class PlayActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        if (backPressedTime + 2000 > System.currentTimeMillis()){
-
-            new AlertDialog.Builder(this)
-                    .setTitle("Do you want to Exit ?")
-                    //.setTitle("Are you Sure Do you want to Exit ?")
-                    .setNegativeButton("No",null)
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            Log.i("DATA","executed Play Activity");
-                            setResult(RESULT_OK, new Intent().putExtra("Exit",true));
-                            finish();
-                        }
-                    }).create().show();
+        new AlertDialog.Builder(this)
+                .setTitle("Do you want to Exit ?")
+                //.setTitle("Are you Sure Do you want to Exit ?")
+                .setNegativeButton("No",null)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.i("DATA","executed Play Activity");
+                        setResult(RESULT_OK, new Intent().putExtra("Exit",true));
+                        finish();
+                    }
+                }).create().show();
 
 
-        }else {
+      //  }else {
 
         //    Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
 
@@ -58,12 +55,12 @@ public class PlayActivity extends AppCompatActivity {
 
        // backPressedTime = System.currentTimeMillis();
 
-    }
+
 
     @Override
     protected void onStop() {
         super.onStop();
-        finish();
+     //   finish();
     }
 
 }
