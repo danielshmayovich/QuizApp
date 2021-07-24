@@ -33,7 +33,7 @@ public class PlayActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        if (backPressedTime + 2000 > System.currentTimeMillis()){
+//        if (backPressedTime + 2000 > System.currentTimeMillis()){
 
             new AlertDialog.Builder(this)
                     .setTitle("Do you want to Exit ?")
@@ -50,11 +50,11 @@ public class PlayActivity extends AppCompatActivity {
                     }).create().show();
 
 
-        }else {
+//        }else {
 
         //    Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
 
-        }
+//        }
 
        // backPressedTime = System.currentTimeMillis();
 
@@ -63,7 +63,7 @@ public class PlayActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        finish();
+//        finish();
     }
 
 }
