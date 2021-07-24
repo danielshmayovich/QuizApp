@@ -73,7 +73,14 @@ public class QuizActivity extends AppCompatActivity {
 
         String language = getString(R.string.language);
 
+        Log.d("TRIVIA", "onCreate: before viewmodel");
         questionViewModel = ViewModelProviders.of(this).get(QuestionViewModel.class);
+
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {}
+
+        Log.d("TRIVIA", "onCreate: calling getAllQuestionByCategory with category=" + CategoryValue);
         questionViewModel.getAllQuestionByCategory(CategoryValue,language).observe(this, new Observer<List<Questions>>() {
             @Override
             public void onChanged(@Nullable List<Questions> questions) {
@@ -81,6 +88,7 @@ public class QuizActivity extends AppCompatActivity {
                 if (questions == null || questions.size() == 0) {
                     return;
                 }
+                Log.d("TRIVIA", "questions: " + questions.size());
                 fetchContent(questions);
 
             }
@@ -127,7 +135,6 @@ public class QuizActivity extends AppCompatActivity {
         questionTotalCount = quesList.size() + 1;
 
         if (questionCounter < questionTotalCount -1){
-
             currentQ = quesList.get(questionCounter);
             txtQuestion.setText(currentQ.getQuestion());
             rb1.setText(currentQ.getOptA());
@@ -138,6 +145,7 @@ public class QuizActivity extends AppCompatActivity {
             answerd = false;
             textViewQuestionCount.setText("Questions: " + questionCounter +"/" +(questionTotalCount-1));
             timeLeftinMillis = COUNTDOWN_IN_MILLIS;
+            Log.d("TRIVIA", "current question: " + currentQ.getQuestion());
             startCountDown();
 
         }else {
