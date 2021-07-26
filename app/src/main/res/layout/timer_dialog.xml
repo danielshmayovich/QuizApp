@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Times Up!"
+        android:text="@string/txt_TimesUp"
         android:padding="5dp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Game Over"
+        android:text="@string/txt_GameOver"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
         android:paddingBottom="10dp"

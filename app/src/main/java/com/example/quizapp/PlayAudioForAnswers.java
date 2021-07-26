@@ -33,7 +33,7 @@ public class PlayAudioForAnswers {
     }
 
     private void playMusic(int audioFile) {
-
+        //Register a callback to be invoked when the media source is ready for playback.
         mediaPlayer = MediaPlayer.create(mContext,audioFile);
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -41,7 +41,7 @@ public class PlayAudioForAnswers {
                 mediaPlayer.start();
             }
         });
-
+        //Register a callback to be invoked when a seek operation has been completed.
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {

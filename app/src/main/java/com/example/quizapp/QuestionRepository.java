@@ -14,7 +14,6 @@ public class QuestionRepository {
     public QuestionRepository(Application application, String language){
         QuestionRoomDatabase db = QuestionRoomDatabase.getInstance(application);
         mQuestionDao = db.questionDao();
-      //  mAllQuestions = mQuestionDao.getAllQuestions(language);
     }
 
     //with categories

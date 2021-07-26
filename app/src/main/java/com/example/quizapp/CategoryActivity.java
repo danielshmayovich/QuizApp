@@ -38,31 +38,31 @@ public class CategoryActivity extends AppCompatActivity  implements View.OnClick
             case R.id.bt_Sport:
 
                 Intent intentSport = new Intent(CategoryActivity.this,QuizActivity.class);
-                intentSport.putExtra("Category","Sport");
+                intentSport.putExtra("Category", btSport.getText().toString());
                 startActivity(intentSport);
                 break;
 
             case R.id.bt_Music:
                 Intent intentMusic = new Intent(CategoryActivity.this,QuizActivity.class);
-                intentMusic.putExtra("Category","Music");
+                intentMusic.putExtra("Category",btMusic.getText().toString());
                 startActivity(intentMusic);
                 break;
 
             case R.id.bt_Science:
                 Intent intentScience = new Intent(CategoryActivity.this,QuizActivity.class);
-                intentScience.putExtra("Category","Science");
+                intentScience.putExtra("Category",btScience.getText().toString());
                 startActivity(intentScience);
                 break;
 
             case R.id.bt_Movies:
                 Intent intentMovies = new Intent(CategoryActivity.this,QuizActivity.class);
-                intentMovies.putExtra("Category","Movies");
+                intentMovies.putExtra("Category",btMovies.getText().toString());
                 startActivity(intentMovies);
                 break;
 
             case R.id.bt_Technology:
                 Intent intentTechnology = new Intent(CategoryActivity.this,QuizActivity.class);
-                intentTechnology.putExtra("Category","Technology");
+                intentTechnology.putExtra("Category",btTechnology.getText().toString());
                 startActivity(intentTechnology);
                 break;
 

@@ -35,7 +35,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
                 try {
-                    sleep(3000);
+                    sleep(4000);
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -51,31 +51,14 @@ public class SplashActivity extends AppCompatActivity {
         thread.start();
     }
 
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if (requestCode == EXIT_CODE) {
-//
-//            if (resultCode == RESULT_OK) {
-//                if (data.getBooleanExtra("EXIT", true)) {
-//                    finish();
-//                }
-//
-//            }
-//        }
-//    }
-
     private void GoPlayActivity() {
 
-//        startActivityForResult(new Intent(SplashActivity.this, PlayActivity.class), EXIT_CODE);
-//    }
-//
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
         startActivity(new Intent(SplashActivity.this, PlayActivity.class));
+        /**
+         * Call this when your activity is done and should be closed.  The
+         * ActivityResult is propagated back to whoever launched you via
+         * onActivityResult().
+         */
         finish();
     }
 }

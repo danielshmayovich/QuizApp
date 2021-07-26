@@ -47,9 +47,9 @@ public class ResultActivity extends AppCompatActivity {
         int correctQuestions = intent.getIntExtra("CorrectQuestions",0);
         int wrongQuestion = intent.getIntExtra("WrongQuestions",0);
 
-        txtTotalQuizQuestion.setText("Total Questions: " + String.valueOf(totalQuestion));
-        txtCorrectQuestion.setText("Correct Questions: " + String.valueOf(correctQuestions));
-        txtWrongQuestion.setText("Wrong Questions: " + String.valueOf(wrongQuestion));
+        txtTotalQuizQuestion.setText(txtTotalQuizQuestion.getText().toString() + String.valueOf(totalQuestion));
+        txtCorrectQuestion.setText(txtCorrectQuestion.getText().toString()  + String.valueOf(correctQuestions));
+        txtWrongQuestion.setText(txtWrongQuestion.getText().toString() + String.valueOf(wrongQuestion));
 
 
         if (score > highScore){
@@ -61,7 +61,7 @@ public class ResultActivity extends AppCompatActivity {
 
         highScore = score;
 
-        txtHighScore.setText("High Score: " + String.valueOf(highScore));
+        txtHighScore.setText(txtHighScore.getText().toString() + String.valueOf(highScore));
 
         SharedPreferences sharedPreferences = getSharedPreferences(SHRED_PREFERENCE,MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -75,7 +75,7 @@ public class ResultActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences(SHRED_PREFERENCE,MODE_PRIVATE);
         highScore = sharedPreferences.getInt(SHRED_PREFERENCE_HIGH_SCORE,0);
-        txtHighScore.setText("High Score: " + String.valueOf(highScore));
+        txtHighScore.setText(txtHighScore.getText().toString() + String.valueOf(highScore));
 
     }
 

@@ -127,7 +127,6 @@ public class QuizActivity extends AppCompatActivity {
         rb2.setTextColor(Color.BLACK);
         rb3.setTextColor(Color.BLACK);
         rb4.setTextColor(Color.BLACK);
-
         questionTotalCount = quesList.size() + 1;
 
         if (questionCounter < questionTotalCount -1){
@@ -140,7 +139,8 @@ public class QuizActivity extends AppCompatActivity {
             rb4.setText(currentQ.getOptD());
             questionCounter++;
             answerd = false;
-            textViewQuestionCount.setText("Questions: " + questionCounter +"/" +(questionTotalCount-1));
+
+            textViewQuestionCount.setText( "Questions" + questionCounter +"/" +(questionTotalCount-1));
             Log.d("TRIVIA", "current question: " + currentQ.getQuestion());
             timeLeftinMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
@@ -264,7 +264,7 @@ public class QuizActivity extends AppCompatActivity {
                     rb1.setTextColor(Color.WHITE);
                     correctAns++;
                     score +=10;  // score = score + 10
-                    textViewScore.setText("Score: " + String.valueOf(score));
+                    textViewScore.setText(textViewScore.getText().toString() + String.valueOf(score));
                     correctDialog.correctDialog(score,this);
                     FLAG = 1;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
@@ -288,7 +288,7 @@ public class QuizActivity extends AppCompatActivity {
                     rb2.setTextColor(Color.WHITE);
                     correctAns++;
                     score +=10;  // score = score + 10
-                    textViewScore.setText("Score: " + String.valueOf(score));
+                    textViewScore.setText(textViewScore.getText().toString()+ String.valueOf(score));
                     correctDialog.correctDialog(score,this);
                     FLAG = 1;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
@@ -312,7 +312,7 @@ public class QuizActivity extends AppCompatActivity {
                      rb3.setTextColor(Color.WHITE);
                     correctAns++;
                     score +=10;  // score = score + 10
-                    textViewScore.setText("Score: " + String.valueOf(score));
+                    textViewScore.setText(textViewScore.getText().toString() + String.valueOf(score));
                     correctDialog.correctDialog(score,this);
                     FLAG = 1;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
@@ -337,7 +337,7 @@ public class QuizActivity extends AppCompatActivity {
                     rb4.setTextColor(Color.WHITE);
                     correctAns++;
                     score +=10;  // score = score + 10
-                    textViewScore.setText("Score: " + String.valueOf(score));
+                    textViewScore.setText(textViewScore.getText().toString() + String.valueOf(score));
                     correctDialog.correctDialog(score,this);
                     FLAG = 1;
                     playAudioForAnswers.setAudioforAnswers(FLAG);
